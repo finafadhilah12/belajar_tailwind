@@ -4,17 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify"
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tailwindcss": "^4.1.12",
-    "@tailwindcss/cli": "^4.1.12",
     "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
     "browserslist": "^4.25.4",
     "caniuse-lite": "^1.0.30001737",
     "electron-to-chromium": "^1.5.211",
@@ -24,8 +21,10 @@
     "node-releases": "^2.0.19",
     "normalize-range": "^0.1.2",
     "picocolors": "^1.1.1",
+    "postcss": "^8.5.6",
     "postcss-value-parser": "^4.2.0",
     "source-map-js": "^1.2.1",
+    "tailwindcss": "^4.1.12",
     "update-browserslist-db": "^1.1.3"
   }
 }
