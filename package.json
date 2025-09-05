@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "build": "postcss ./src/input.css -o ./src/output.css"
-  },
+  "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+  "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
