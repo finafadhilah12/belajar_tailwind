@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belajar Tailwind</title>
+  <link rel="stylesheet" href="./output.css" />
+</head>
+
+<body class="bg-purple-100 min-h-screen flex items-center justify-center p-6">
+  <div class="bg-white p-8 rounded-2xl shadow-lg text-center w-[90%] max-w-sm">
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">
+      Hai
+    </h1>
+    <p class="text-gray-700 mb-6">lets go!</p>
+
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button id="myButton"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition">
+        click here
+      </button>
+
+      <button id="openModal"
+        class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium px-4 py-2 rounded-lg shadow-sm transition">
+        click here(2)
+      </button>
+    </div>
+  </div>
+
+  <div id="modal"
+       class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+      <h2 class="text-xl font-bold text-gray-900">haloo </h2>
+      <p class="text-gray-600 mt-2">
+        hai nama aku fina...
+      </p>
+      <div class="mt-6 flex justify-end">
+        <button id="closeModal"
+          class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-700 transition">
+          close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"
+       class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity">
+    Berhasil!
+  </div>
+
+  <script>
+    function showToast(message) {
+      const t = document.getElementById('toast');
+      t.textContent = message;
+      t.classList.remove('opacity-0');
+      setTimeout(() => t.classList.add('opacity-0'), 2000);
+    }
+
+    document.getElementById("myButton").addEventListener("click", () => {
+      showToast("yap sudah bisa");
+    });
+
+    const modal = document.getElementById('modal');
+    document.getElementById('openModal').addEventListener('click', () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex'); 
+    });
+    document.getElementById('closeModal').addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+  </script>
+</body>
+</html>
